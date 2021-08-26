@@ -1,0 +1,18 @@
+{
+  "name": "timezone-map",
+  "version": "1.0.0",
+  "description": "Get timezone information and create javascript dates from a specific timezone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "timezone",
+    "map",
+    "timezone-map",
+    "timezones",
+    "date"
+  ],
+  "author": "Curtis Covington",
+  "license": "ISC"
+}
