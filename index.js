@@ -3596,6 +3596,12 @@ class TimeZone {
     if (this._isDstObserved()) return this.tz.offsetDST;
     return this.tz.offset;
   }
+
+  getOffsetForDate(date = new Date()) {
+    // eslint-disable-next-line no-underscore-dangle
+    if (this._isDstObserved(date)) return this.tz.offsetDST;
+    return this.tz.offset;
+  }
   // eslint-disable-next-line no-underscore-dangle
   _stdTimezoneOffset() {
     const now = new Date();
@@ -3605,8 +3611,7 @@ class TimeZone {
   }
 
   // eslint-disable-next-line no-underscore-dangle
-  _isDstObserved() {
-    const now = new Date();
+  _isDstObserved(now = new Date()) {
     const conv = new Date(`${now.getFullYear()}-${(now.getMonth()+1).toString().padStart(2, "0")}-${now.getDate().toString().padStart(2, "0")}T${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}:${now.getSeconds().toString().padStart(2, "0")}${this.tz.offset}`);
     // eslint-disable-next-line no-underscore-dangle
     return conv.getTimezoneOffset() < this._stdTimezoneOffset();
