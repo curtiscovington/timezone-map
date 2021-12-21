@@ -1,6 +1,6 @@
 {
   "name": "timezone-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get timezone information and create javascript dates from a specific timezone",
   "main": "index.js",
   "scripts": {
